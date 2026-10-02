@@ -1,0 +1,130 @@
+.section {
+  position: relative;
+  height: 175vh;
+  background: var(--void);
+}
+
+.pin {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  will-change: transform;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% 55%;
+  filter: brightness(0.92) contrast(1.05) saturate(1.02);
+  animation: ambientZoom 24s ease-in-out infinite alternate;
+}
+
+@keyframes ambientZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.07);
+  }
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 38%, transparent 35%, rgba(5, 6, 8, 0.55) 100%),
+    linear-gradient(180deg, rgba(5, 6, 8, 0.45) 0%, rgba(5, 6, 8, 0.1) 30%, rgba(5, 6, 8, 0.35) 68%, var(--void) 100%);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(28px, 5vw, 56px);
+  padding: 0 24px;
+}
+
+.wordmark {
+  display: flex;
+  justify-content: center;
+  gap: clamp(2px, 0.7vw, 10px);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(52px, 12vw, 176px);
+  line-height: 1;
+  color: var(--white);
+  text-shadow: 0 6px 60px rgba(0, 0, 0, 0.65);
+}
+
+.measure {
+  position: absolute;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.letter {
+  display: inline-block;
+  text-align: center;
+}
+
+.letterLocked {
+  animation: letterLock 0.55s var(--ease-out);
+}
+
+@keyframes letterLock {
+  0% {
+    transform: scale(1.35) translateY(-6px);
+  }
+  55% {
+    transform: scale(0.94) translateY(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.discover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-60);
+  transition: color 0.25s var(--ease-out);
+}
+
+.discover:hover {
+  color: var(--white);
+}
+
+.arrow {
+  display: inline-block;
+  font-size: 18px;
+  color: var(--white);
+}
+
+@media (max-width: 560px) {
+  .wordmark {
+    gap: 3px;
+  }
+}

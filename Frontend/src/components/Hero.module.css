@@ -1,0 +1,190 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 140px var(--gutter) 60px;
+}
+
+.grid {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: center;
+}
+
+.copy {
+  max-width: 680px;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(32px, 3.4vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.lineMask {
+  display: block;
+  overflow: hidden;
+}
+
+.lineInner {
+  display: block;
+}
+
+.sub {
+  margin-top: 28px;
+  max-width: 42ch;
+}
+
+.actions {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.visual {
+  position: relative;
+}
+
+.stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--ink-12);
+  background: var(--void);
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(5, 6, 8, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: opacity 0.45s var(--ease-out);
+}
+
+.stack:hover .backdrop {
+  opacity: 1;
+}
+
+.frameEntrance {
+  position: relative;
+}
+
+.frameEntrance:has(.frame:hover) {
+  z-index: 10;
+}
+
+.frame {
+  position: relative;
+  height: clamp(148px, 19vh, 224px);
+  overflow: hidden;
+  border-bottom: 1px solid var(--ink-12);
+  transform-origin: right center;
+  transition: transform 0.6s var(--ease-out), box-shadow 0.6s var(--ease-out);
+}
+
+.frameEntrance:last-child .frame {
+  border-bottom: none;
+}
+
+.frame:hover {
+  transform: scale(1.7);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.65);
+}
+
+.frameImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.02) contrast(1.02);
+  transition: filter 0.6s var(--ease-out);
+}
+
+.frame:hover .frameImg {
+  filter: saturate(1.08) contrast(1.05);
+}
+
+.frameLabel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 16px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: var(--ink-60);
+  background: linear-gradient(180deg, transparent, rgba(5, 6, 8, 0.85));
+  opacity: 1;
+  transition: opacity 0.35s var(--ease-out);
+}
+
+.frame:hover .frameLabel {
+  opacity: 0;
+}
+
+.scrollCue {
+  position: absolute;
+  bottom: 36px;
+  left: var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--ink-40);
+}
+
+.scrollLine {
+  width: 32px;
+  height: 1px;
+  background: var(--ink-25);
+}
+
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .copy {
+    max-width: none;
+  }
+
+  .visual {
+    order: -1;
+  }
+
+  .scrollCue {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .frame {
+    height: clamp(120px, 24vh, 180px);
+  }
+
+  .frame:hover {
+    transform: scale(1.4);
+  }
+
+  .frameLabel {
+    font-size: 9.5px;
+    padding: 8px 12px;
+  }
+}

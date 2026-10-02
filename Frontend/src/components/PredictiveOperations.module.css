@@ -1,0 +1,141 @@
+.header {
+  max-width: 640px;
+}
+
+.body {
+  margin-top: 22px;
+}
+
+.chain {
+  margin-top: 72px;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.nodeWrap {
+  display: flex;
+  align-items: center;
+  flex: 1 1 0;
+  min-width: 160px;
+}
+
+.node {
+  flex: 1;
+  padding: 22px 18px;
+  border: 1px solid var(--ink-12);
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 108px;
+  justify-content: center;
+}
+
+.nodeLabel {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  color: var(--ink-40);
+}
+
+.nodeDelta {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.mars .nodeDelta {
+  color: var(--mars);
+}
+
+.signal .nodeDelta {
+  color: var(--signal);
+}
+
+.arrow {
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+  color: var(--ink-25);
+  font-size: 16px;
+}
+
+.responses {
+  margin-top: 88px;
+  padding-top: 48px;
+  border-top: 1px solid var(--ink-12);
+}
+
+.responsesLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--ink-40);
+}
+
+.responseRow {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.responseCard {
+  padding: 28px;
+  border: 1px solid var(--ink-12);
+  background: var(--surface);
+}
+
+.responseTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.responseMeta {
+  margin-top: 22px;
+  display: flex;
+  gap: 40px;
+}
+
+.metaLabel {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--ink-40);
+}
+
+.metaValue {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--white);
+}
+
+.link {
+  margin-top: 32px;
+  display: inline-flex;
+}
+
+@media (max-width: 900px) {
+  .chain {
+    flex-direction: column;
+  }
+
+  .nodeWrap {
+    flex-direction: column;
+  }
+
+  .arrow {
+    transform: rotate(90deg);
+    padding: 6px 0;
+  }
+
+  .responseRow {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,277 @@
+.header {
+  max-width: 640px;
+}
+
+.body {
+  margin-top: 22px;
+}
+
+.tabs {
+  margin-top: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tab {
+  padding: 10px 16px;
+  border: 1px solid var(--ink-12);
+  background: transparent;
+  color: var(--ink-60);
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 2px;
+  transition: all 0.25s var(--ease-out);
+}
+
+.tab:hover {
+  color: var(--white);
+  border-color: var(--ink-25);
+}
+
+.tabActive {
+  color: var(--void);
+  background: var(--white);
+  border-color: var(--white);
+}
+
+.frame {
+  margin-top: 24px;
+  border: 1px solid var(--ink-12);
+  background: var(--surface);
+  min-height: 380px;
+}
+
+.frameBar {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--ink-12);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink-40);
+}
+
+.frameBody {
+  padding: 40px;
+}
+
+/* resource bars */
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 560px;
+}
+
+.barRow {
+  display: grid;
+  grid-template-columns: 90px 1fr 50px;
+  align-items: center;
+  gap: 16px;
+}
+
+.barLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--ink-40);
+}
+
+.barTrack {
+  height: 6px;
+  background: var(--ink-06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 3px;
+}
+
+.barValue {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-align: right;
+}
+
+/* lists */
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.listRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid var(--ink-06);
+}
+
+.listRow:first-child {
+  border-top: none;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-40);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--ink-40);
+}
+
+.dot.signal {
+  background: var(--signal);
+}
+
+.dot.life {
+  background: var(--life);
+}
+
+.dot.energy {
+  background: var(--energy);
+}
+
+.listSystem {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  min-width: 170px;
+}
+
+.listDetail {
+  color: var(--ink-60);
+  font-size: 14px;
+}
+
+.tag {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border: 1px solid var(--ink-12);
+}
+
+.tag.signal {
+  color: var(--signal);
+  border-color: var(--signal-25);
+}
+
+.tag.life {
+  color: var(--life);
+  border-color: var(--life-25);
+}
+
+.tag.energy {
+  color: var(--energy);
+  border-color: var(--energy-25);
+}
+
+/* chart */
+.chartWrap {
+  max-width: 600px;
+}
+
+.chart {
+  width: 100%;
+  height: auto;
+}
+
+.chartLegend {
+  margin-top: 18px;
+  display: flex;
+  gap: 28px;
+  font-size: 12px;
+  color: var(--ink-60);
+  font-family: var(--font-mono);
+}
+
+.chartLegend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* status */
+.statusGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.statusHeadline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--life);
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--ink-60);
+}
+
+.checklist li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.check {
+  color: var(--life);
+  font-family: var(--font-mono);
+}
+
+/* decision compare */
+.decisionCompare {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 560px;
+}
+
+.decisionCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px;
+  border: 1px solid var(--ink-12);
+}
+
+.decisionMetric {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 26px;
+}
+
+@media (max-width: 640px) {
+  .frameBody {
+    padding: 24px;
+  }
+
+  .barRow {
+    grid-template-columns: 70px 1fr 40px;
+    gap: 10px;
+  }
+
+  .listSystem {
+    min-width: 120px;
+  }
+
+  .decisionCompare {
+    grid-template-columns: 1fr;
+  }
+}

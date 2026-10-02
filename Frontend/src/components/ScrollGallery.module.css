@@ -1,0 +1,135 @@
+.gallery {
+  position: relative;
+}
+
+.stickyPin {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  will-change: transform;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 50%, transparent 30%, rgba(5, 6, 8, 0.55) 100%),
+    linear-gradient(180deg, rgba(5, 6, 8, 0.5) 0%, transparent 30%, transparent 60%, rgba(5, 6, 8, 0.6) 100%);
+}
+
+.exitDarken {
+  position: absolute;
+  inset: 0;
+  background: var(--void);
+  opacity: 0;
+  transition: opacity 1.4s var(--ease-out);
+}
+
+.exitDarkenActive {
+  opacity: 0.85;
+}
+
+.headline {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out);
+}
+
+.headlineVisible {
+  opacity: 1;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(20px, 3.2vw, 48px);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--white);
+  text-shadow: 0 8px 50px rgba(0, 0, 0, 0.55);
+}
+
+.titleIndex {
+  color: var(--mars);
+}
+
+/* fixed caption dock, docks each title into a bottom row once its zoom completes */
+.textDock {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  pointer-events: none;
+  padding: 18px var(--gutter) 22px;
+}
+
+.dockInner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 4vw, 56px);
+  flex-wrap: wrap;
+}
+
+.dockSlot {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+
+.dockSlotVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dockText {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(13px, 1.5vw, 17px);
+  color: var(--white);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .dockInner {
+    gap: 14px;
+  }
+
+  .dockText {
+    white-space: normal;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 560px) {
+  .title {
+    font-size: clamp(18px, 5vw, 30px);
+  }
+}

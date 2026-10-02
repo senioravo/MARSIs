@@ -1,0 +1,84 @@
+.header {
+  max-width: 680px;
+}
+
+.body {
+  margin-top: 22px;
+}
+
+.stepper {
+  margin-top: 56px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border: 1px solid var(--ink-12);
+  background: transparent;
+  color: var(--ink-60);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.25s var(--ease-out);
+}
+
+.stepIndex {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-40);
+}
+
+.step:hover {
+  border-color: var(--ink-25);
+  color: var(--white);
+}
+
+.stepActive {
+  border-color: var(--mars-25);
+  background: var(--mars-12);
+  color: var(--white);
+}
+
+.stepActive .stepIndex {
+  color: var(--mars);
+}
+
+.networkFrame {
+  margin-top: 32px;
+  position: relative;
+  border: 1px solid var(--ink-12);
+  background: var(--surface);
+}
+
+.network {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.networkMeta {
+  position: absolute;
+  bottom: 20px;
+  right: 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.metaLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--ink-40);
+}
+
+.metaValue {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--mars);
+}

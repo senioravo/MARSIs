@@ -1,0 +1,133 @@
+.section {
+  overflow: hidden;
+}
+
+.bgLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bgFade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--void) 0%, transparent 10%, transparent 90%, var(--void) 100%);
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(40px, 6vw, 100px);
+  align-items: start;
+}
+
+.intro {
+  position: sticky;
+  top: 140px;
+}
+
+.body {
+  margin-top: 24px;
+  color: rgba(245, 247, 250, 0.85);
+  text-shadow: 0 2px 24px rgba(5, 6, 8, 0.6);
+}
+
+.diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fragments {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.fragment {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 16px;
+  border: 1px dashed var(--ink-25);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-60);
+  background: var(--surface);
+}
+
+.fragmentDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ink-25);
+  flex-shrink: 0;
+}
+
+.connector {
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(var(--ink-25), var(--mars));
+  transform-origin: top;
+}
+
+.unified {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 32px;
+  border: 1px solid var(--mars-25);
+  background: var(--mars-12);
+  border-radius: 2px;
+}
+
+.unifiedMark {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--mars);
+  box-shadow: 0 0 0 4px var(--mars-12);
+  flex-shrink: 0;
+}
+
+.unifiedText {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(16px, 1.6vw, 20px);
+  letter-spacing: -0.01em;
+}
+
+.unifiedSep {
+  color: var(--ink-40);
+  font-weight: 400;
+  margin: 0 2px;
+}
+
+@media (max-width: 980px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .intro {
+    position: static;
+  }
+
+  .fragments {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .fragments {
+    grid-template-columns: 1fr;
+  }
+
+  .unifiedText {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,44 @@
+:root {
+  /* Brand core (fixed by brand system) */
+  --void: #050608;
+  --surface: #0d1014;
+  --surface-2: #12161b;
+  --surface-3: #171c22;
+  --white: #f5f7fa;
+
+  --mars: #d85c3a;
+  --mars-dim: #7a3626;
+  --signal: #ff9f43;
+  --life: #7ed957;
+  --energy: #65b8ff;
+  --regolith: #b98b5e;
+
+  /* Derived neutrals */
+  --ink-60: rgba(245, 247, 250, 0.6);
+  --ink-40: rgba(245, 247, 250, 0.4);
+  --ink-25: rgba(245, 247, 250, 0.25);
+  --ink-12: rgba(245, 247, 250, 0.12);
+  --ink-06: rgba(245, 247, 250, 0.06);
+
+  --mars-25: rgba(216, 92, 58, 0.25);
+  --mars-12: rgba(216, 92, 58, 0.12);
+  --energy-25: rgba(101, 184, 255, 0.25);
+  --energy-12: rgba(101, 184, 255, 0.12);
+  --life-25: rgba(126, 217, 87, 0.25);
+  --life-12: rgba(126, 217, 87, 0.12);
+  --signal-25: rgba(255, 159, 67, 0.25);
+  --signal-12: rgba(255, 159, 67, 0.12);
+
+  /* Type */
+  --font-display: "Excon", "General Sans", sans-serif;
+  --font-body: "General Sans", "Helvetica Neue", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Layout */
+  --gutter: clamp(20px, 5vw, 64px);
+  --content-max: 1400px;
+  --radius: 3px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
