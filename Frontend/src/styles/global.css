@@ -257,3 +257,16 @@ svg {
   font-size: 13px;
   color: var(--ink-40);
 }
+
+/* Hide scrollbars everywhere (landing, simulator, operations log, tables) while keeping
+   wheel, touch and keyboard scrolling. */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
